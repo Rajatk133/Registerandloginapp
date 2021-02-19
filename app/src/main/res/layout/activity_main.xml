@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_gravity="center">
+
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="280dp"
+           android:layout_gravity="center"
+
+           app:srcCompat="@drawable/picture1"
+           tools:ignore="VectorDrawableCompat" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
+            android:paddingLeft="50sp"
+            android:paddingRight="50sp"
+            android:paddingBottom="40sp"
+            android:text="@string/make_meditation_a_habit_you_love"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/googlesignin"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/buttonbackground"
+            android:padding="20sp"
+            android:text="@string/continue_with_google">
+
+        </Button>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/guestsignin"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/buttonbackground"
+            android:padding="20sp"
+            android:text="Continue As Guest      ">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="By creating an account you agree to our Terms of Service and Privacy Policy"
+            android:textAlignment="center"
+            android:textSize="11sp">
+
+        </TextView>
+
+    </LinearLayout>
+   </LinearLayout>
+ <ProgressBar
+     android:id="@+id/progressbar"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="center" />
+</FrameLayout>

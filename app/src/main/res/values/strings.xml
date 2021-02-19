@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoginAssessment</string>
+    <string name="make_meditation_a_habit_you_love">Make meditation a habit you love</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="hi_what_do_your_friends_call_you">Hi, what do your friends call you?</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="continue1">CONTINUE</string>
+    <string name="name">Name</string>
+
+</resources>
