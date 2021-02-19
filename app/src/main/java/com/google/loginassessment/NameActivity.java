@@ -34,7 +34,7 @@ public class NameActivity extends AppCompatActivity {
      Homebutton=findViewById(R.id.Button);
      username= findViewById(R.id.username);
 
-
+     //enabling and desabling the continue button
      username.addTextChangedListener(new TextWatcher() {
          @Override
          public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
@@ -53,6 +53,7 @@ public class NameActivity extends AppCompatActivity {
          public void afterTextChanged(Editable editable) { }
      });
 
+          // getting name from edittext
           Homebutton.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
@@ -65,6 +66,7 @@ public class NameActivity extends AppCompatActivity {
           });
       }
 
+      // for back button on taskbar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id=item.getItemId();

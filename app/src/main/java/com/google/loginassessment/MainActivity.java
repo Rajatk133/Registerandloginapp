@@ -33,7 +33,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth=FirebaseAuth.getInstance();
     private static final int RC_SIGN_IN = 1;
@@ -51,10 +50,12 @@ public class MainActivity extends AppCompatActivity {
         Googlesignin=findViewById(R.id.googlesignin);
         Guestsignin=findViewById(R.id.guestsignin);
        progressBar.setVisibility(View.GONE);
+
+
+       // for creating google sign in intent and email selector
         Googlesignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                         .requestIdToken(getString(R.string.default_web_client_id))
                         .requestEmail()
@@ -64,11 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                 progressBar.setVisibility(View.VISIBLE);
-                startActivityForResult(signInIntent, RC_SIGN_IN);
+                startActivityForResult(signInIntent, RC_SIGN_IN); // starting activity for email chooser
 
             }
         });
 
+
+        // Guest login button
         Guestsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(@NonNull View view) {
                 Intent i=new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("https://www.google.com/"));
+                i.setData(Uri.parse("https://www.google.com/"));//demo link
                 startActivity(i);
             }
         };
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(@NonNull View view) {
                 Intent i=new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("https://www.google.com/"));
+                i.setData(Uri.parse("https://www.google.com/"));//demo link
                 startActivity(i);
             }
         };
@@ -103,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
+
+    // for automatic login checking Firebase user in onStart()
     @Override
     public void onStart() {
         super.onStart();
@@ -117,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Processing data after receiveing data from googlesignin intenr
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -140,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+                // going to homeactivity
                 Intent intent=new Intent(MainActivity.this,HomeActivity.class);
                 intent.putExtra("Username1",account.getDisplayName());
                 startActivity(intent);

@@ -22,9 +22,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Intent intent=getIntent();
-        String username=intent.getStringExtra("Username1");
-        Toast.makeText(HomeActivity.this,"Welcome "+username,Toast.LENGTH_LONG).show();
-        Objects.requireNonNull(getSupportActionBar()).setTitle("");
+        String username=intent.getStringExtra("Username1");// taking username from intent
+
+        Toast.makeText(HomeActivity.this,"Welcome "+username,Toast.LENGTH_LONG).show();// toast for displaying username
+
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");// setting title of taskbar empty
 
 
     }
